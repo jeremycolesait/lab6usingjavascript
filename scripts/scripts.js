@@ -10,7 +10,7 @@ You are encouraged to use the provided naming convention for ease of review.
 /* create variables to hold the values for modelName and duration */
 
 // INSERT YOUR CODE HERE
-var modelName = 'XYZ';
+var modelName = "XYZ";
 var duration = 0;
 
 
@@ -28,10 +28,10 @@ var duration = 0;
 
 // INSERT YOUR CODE HERE
 function recalculate() {
-    let costLabel = document.getElementById("calculated-cost");
-    let cost;
+    const costLabel = document.getElementById("calculated-cost");
+    var cost;
 
-    if (modelName === 'XYZ'){
+    if (modelName === "XYZ"){
         cost = duration * 100;
     }
     else{
@@ -64,7 +64,7 @@ function changeModel(){
         model_text.innerHTML = "Model CPRG";
     }
     else{
-        modelName = 'XYZ';
+        modelName = "XYZ";
         model_text.innerHTML = "Model XYZ";
     }
 
