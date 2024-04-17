@@ -86,15 +86,13 @@ function changeModel(){
 */
 
 // INSERT YOUR CODE HERE
-var durationButton = document.getElementById("duration-button");
+const durationButton = document.getElementById("duration-button");
 durationButton.addEventListener("click", changeDuration);
 
 function changeDuration(){
-    var duration_text = document.getElementById("duration-text")
-    duration_change = prompt("Input new duration");
-    duration = duration_change;
-    duration_text.innerHTML = duration_change;
+    let duration_text = document.getElementById("duration-text");
+    duration = prompt("Input new duration");
+    duration_text.innerHTML = duration;
     recalculate(duration);
 }
-
 
