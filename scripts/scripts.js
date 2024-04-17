@@ -94,7 +94,7 @@ function changeDuration(){
     duration_change = prompt("Input new duration");
     duration = duration_change;
     duration_text.innerHTML = duration_change;
-    recalculate();
+    recalculate(duration);
 }
 
 
