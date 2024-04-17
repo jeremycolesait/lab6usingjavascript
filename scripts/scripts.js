@@ -27,19 +27,17 @@ var duration = 0;
 */
 
 // INSERT YOUR CODE HERE
-function recalculate() {
-    const costLabel = document.getElementById("calculated-cost");
-    var cost;
+let cost = 0;
 
+function recalculate(duration) {
+    const costLabel = document.getElementById("calculated-cost");
     if (modelName === "XYZ"){
         cost = duration * 100;
     }
     else{
         cost = duration * 213;
     }
-
     costLabel.innerHTML = cost;
-
 }
 /****************** model button logic ******************/
 
@@ -54,20 +52,19 @@ function recalculate() {
 
 
 // INSERT YOUR CODE HERE
-var modelButton = document.getElementById("model-button");
+const modelButton = document.getElementById("model-button");
+const modelText = document.getElementById("model-text");
 modelButton.addEventListener("click", changeModel);
 
 function changeModel(){
-    var model_text = document.getElementById("model-text")
     if (modelName === "XYZ"){
         modelName = "CPRG";
-        model_text.innerHTML = "Model CPRG";
+        modelText.innerHTML = "Model CPRG";
     }
     else{
         modelName = "XYZ";
-        model_text.innerHTML = "Model XYZ";
+        modelText.innerHTML = "Model XYZ";
     }
-
     recalculate(duration);
 }
 
@@ -91,7 +88,7 @@ durationButton.addEventListener("click", changeDuration);
 
 function changeDuration(){
     let duration_text = document.getElementById("duration-text");
-    duration = prompt("Input new duration");
+    duration = prompt("Input new duration (days)");
     duration_text.innerHTML = duration;
     recalculate(duration);
 }
