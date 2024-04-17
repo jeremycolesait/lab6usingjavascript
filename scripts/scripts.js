@@ -10,10 +10,8 @@ You are encouraged to use the provided naming convention for ease of review.
 /* create variables to hold the values for modelName and duration */
 
 // INSERT YOUR CODE HERE
-var modelName = "XYZ";
+var modelName = 'XYZ';
 var duration = 0;
-
-
 
 
 /****************** helper function ******************/
@@ -27,17 +25,19 @@ var duration = 0;
 */
 
 // INSERT YOUR CODE HERE
-let cost = 0;
-
 function recalculate(duration) {
-    const costLabel = document.getElementById("calculated-cost");
-    if (modelName === "XYZ"){
+    let costLabel = document.getElementById("calculated-cost");
+    let cost;
+
+    if (modelName === 'XYZ'){
         cost = duration * 100;
     }
     else{
         cost = duration * 213;
     }
+
     costLabel.innerHTML = cost;
+
 }
 /****************** model button logic ******************/
 
@@ -52,24 +52,22 @@ function recalculate(duration) {
 
 
 // INSERT YOUR CODE HERE
-const modelButton = document.getElementById("model-button");
-const modelText = document.getElementById("model-text");
+var modelButton = document.getElementById("model-button");
 modelButton.addEventListener("click", changeModel);
 
 function changeModel(){
+    var model_text = document.getElementById("model-text");
     if (modelName === "XYZ"){
         modelName = "CPRG";
-        modelText.innerHTML = "Model CPRG";
+        model_text.innerHTML = "Model CPRG";
     }
     else{
-        modelName = "XYZ";
-        modelText.innerHTML = "Model XYZ";
+        modelName = 'XYZ';
+        model_text.innerHTML = "Model XYZ";
     }
+
     recalculate(duration);
 }
-
-
-
 
 /****************** duration button logic ******************/
 /*  - first, create a variable to represent the "Change Duration" pseudo-button.
@@ -83,13 +81,15 @@ function changeModel(){
 */
 
 // INSERT YOUR CODE HERE
-const durationButton = document.getElementById("duration-button");
+var durationButton = document.getElementById("duration-button");
 durationButton.addEventListener("click", changeDuration);
 
 function changeDuration(){
     let duration_text = document.getElementById("duration-text");
-    duration = prompt("Input new duration (days)");
+    duration = prompt("Input new duration");
     duration_text.innerHTML = duration;
     recalculate(duration);
 }
+
+
 
